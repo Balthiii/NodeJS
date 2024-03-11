@@ -97,3 +97,11 @@ La commande pour appeller un élement d'un objet :
 console.log(bal.firstname) //Balthazar
 console.log(bal.hobbies[1]) //Progaming
 ```
+
+## 2.5 Modules
+
+En JS, un module est un morceau de code réutilisable qui peut être exporté d'un fichier et importé dans un autre fichier, permettant ainsi de partager des variables, des fonctions, des classes, etc..., entre différents fichiers. Cela aide à organiser et à mantenir le code, surtout dans les grands projets.
+
+Il existe deux types de syntaxes pour les imports/exports en JS : 
+- la syntaxe CommonJS (utilisé dans node.js)
+- la syntaxe ES6+ (utilisée dans les navigateurs), on parle du format ESM (ECMAScript Modules)
