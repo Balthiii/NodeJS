@@ -105,3 +105,22 @@ En JS, un module est un morceau de code réutilisable qui peut être exporté d'
 Il existe deux types de syntaxes pour les imports/exports en JS : 
 - la syntaxe CommonJS (utilisé dans node.js)
 - la syntaxe ES6+ (utilisée dans les navigateurs), on parle du format ESM (ECMAScript Modules)
+
+# Partie 3 : RegExp
+
+Les expressions régulières, également appelées "RegExp" ou "regex", sont des motifs de recherche flexibles permettant de décrire un ensemble de chaînes de caractères selon certaines règles. Elles sont utilisées pour effectuer des opérations de recherche, de correspondance et de remplacement dans des chaînes de caractères.
+
+## Callback
+Qu'est ce qu'un callback ? *
+
+C'est une fonction implémenté en paramètre dans une fonction
+
+## Middleware
+
+Qu'est ce qu'une route ? 
+
+Une route est l'association d'une méthode HTTP et une URL.
+
+Qu'est ce qu'une requête middleware pour Express ?
+
+ 

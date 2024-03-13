@@ -18,6 +18,7 @@ console.log(returnLargeNumber(array))
 /*3 Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne de caractères 
 dont toutes les voyelles ont été supprimées.*/
 
+
 const characters = "Sur terre comme au ciel, moi seul mérite d'être vénéré."
 console.log(returnVowelDeleted(characters))
 
