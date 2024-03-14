@@ -1,7 +1,8 @@
 import Express from "express";
-import shopRouter from "./routes/shop.js";
-import bagRouter from "./routes/bag.js";
-import addProductRouter from "./routes/addproduct.js";
+import shopRouter from "./routes/shopRouter.js";
+import bagRouter from "./routes/bagRouter.js";
+import addProductRouter from "./routes/addproductRouter.js";
+import productsRouter from "./routes/productsRouter.js"
 //Créer une application Express
 const app = Express();
 
@@ -16,7 +17,7 @@ app.set("views", "views");
 
 
 app.get("/", (req, res) => {
-  res.render("home", {});
+  res.render("shop", {});
 });
 
 app.use("/shop", shopRouter);
@@ -25,7 +26,9 @@ app.use("/addproduct", addProductRouter);
 
 app.use("/shop/bag", bagRouter);
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.use("/products", productsRouter);
+
+app.listen(4000, () => {
+  console.log("Server is running on port 4000");
 });
 
