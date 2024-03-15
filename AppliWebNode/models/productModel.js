@@ -1,6 +1,6 @@
-import db from ("../util/database");
+import db from "../util/database.js";
 
-export default class Product {
+export default class Products {
     constructor(id, title, imageUrl, description, price) {
         this.id = id;
         this.title = title;
@@ -12,6 +12,22 @@ export default class Product {
 
     save() {
         return db.execute('INSERT INTO products (title, price, description, imageUrl) VALUES (?, ?, ?, ?)', [this.title, this.price, this.description, this.imageUrl]);
+    }
+
+    update() {
+        return db.execute('UPDATE products SET title = ?, price = ?, description = ?, imageUrl = ? WHERE id = ?', [this.title, this.price, this.description, this.imageUrl, this.id]);
+    }
+
+    static fetch(productId) {
+        return db.execute('SELECT * FROM products WHERE id = ?', [productId]);
+    }
+
+    static fetchAll() {
+        return db.execute('SELECT * FROM products');
+    }
+
+    static delete(productId) {
+        return db.execute('DELETE FROM products WHERE id = ?', [productId]);
     }
 }
 

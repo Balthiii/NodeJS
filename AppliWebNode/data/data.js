@@ -1,33 +1,29 @@
 const products = [
     {
-      id: 1,
-      name: "Laptop",
+      title: 1,
       price: 1000,
       description: "A laptop for work or play",
-      image: "https://via.placeholder.com/150",
+      imageUrl: "https://via.placeholder.com/150",
     },
     {
-      id: 2,
-      name: "Desktop PC",
+    title: 2,
       price: 1500,
       description: "A desktop PC for work or play",
-      image: "https://via.placeholder.com/150",
+      imageUrl: "https://via.placeholder.com/150",
     },
     {
-      id: 3,
-      name: "Tablet",
+      title: 3,
       price: 500,
       description: "A tablet for work or play",
-      image: "https://via.placeholder.com/150",
+      imageUrl: "https://via.placeholder.com/150",
     },
     {
-      id: 4,
-      name: "Smartphone",
+      title: 4,
       price: 300,
       description: "A smartphone for work or play",
-      image: "https://via.placeholder.com/150",
+      imageUrl: "https://via.placeholder.com/150",
     },
   ];
   
-  module.exports = products;
+export default products
   
