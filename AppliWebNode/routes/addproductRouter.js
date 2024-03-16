@@ -4,9 +4,9 @@ const router = express.Router();
 
 
 
-router.get('/', shopController.getAddProduct);
+// router.get('/', shopController.getAddProduct);
 
-router.post('/', shopController.postAddProduct);
+// router.post('/', shopController.postAddProduct);
 
 // router.get('/', shopController.getIndex);
 

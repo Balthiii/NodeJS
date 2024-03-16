@@ -60,7 +60,7 @@ body {
     margin-top: 5px;
   }
   
-  .product button {
+  .btn {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #007bff;
@@ -68,9 +68,10 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
   }
   
-  .product button:hover {
+  .btn :hover {
     background-color: #0056b3;
   }
   
@@ -101,7 +102,7 @@ body {
     border-radius: 5px;
   }
   
-  button {
+  .btn {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -110,6 +111,19 @@ body {
     cursor: pointer;
   }
   
-  button:hover {
+.btn:hover {
     background-color: #0056b3;
   }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Pour aligner le texte au centre */
+}
+
+.description img {
+    max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas la largeur de son conteneur */
+}
+
+  

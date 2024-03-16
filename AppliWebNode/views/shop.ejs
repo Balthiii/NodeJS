@@ -1,29 +1,20 @@
 <%- include('includes/head.ejs') %>
   <body>
     <%- include('includes/navigation.ejs') %>
-
+<h1> Liste des produits</h1>
+    <% if(products.length > 0) { %>
     <div class="grid-container">
+      <% for(let product of products) { %>
       <div class="product">
-        <img src="https://media.istockphoto.com/id/937221630/fr/vectoriel/livre-vintage-vert-avec-serrure.jpg?s=612x612&w=0&k=20&c=7T8WBifDv_KZ3DUcz9SOse7Lhdk7uqKJVwGL9jbqABY=" alt="Product 1">
-        <h3>Livre Vert</h3>
-        <p>19.99€</p>
-        <button>Détail</button>
-        <button> Ajouter au panier</button>
+        <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+        <h3><%= product.name %></h3>
+        <p><%= product.price %></p>
+        <a class="btn" href="/products/<%= product.id %>">Détail</a>
       </div>
-      <div class="product">
-        <img src="https://media.istockphoto.com/id/937221538/fr/vectoriel/livre-vintage-bleu-avec-signet.jpg?s=612x612&w=0&k=20&c=yovAMMB9yZwdRD5RDX9amNTjfeZ1-ibuzJvNad-6wx4=" alt="Product 2">
-        <h3>Livre Bleu</h3>
-        <p>24.99€</p>
-        <button>Détail</button>
-        <button> Ajouter au panier</button>
+      <% } %>
       </div>
-      <div class="product">
-        <img src="https://media.istockphoto.com/id/587536262/fr/vectoriel/ic%C3%B4ne-du-livre.jpg?s=612x612&w=0&k=20&c=Bb6nCAod03PlST-YURBIktk8XlPWWx7CF0mc-W5mKZk=" alt="Product 3">
-        <h3>Livre Rouge</h3>
-        <p>16.99€</p>
-        <button>Détail</button>
-        <button> Ajouter au panier</button>
-      </div>
-
+      <% } else { %>
+        <h1>No Products Found</h1>
+      <% } %>
   </body>
 </html>

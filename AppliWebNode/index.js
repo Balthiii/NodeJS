@@ -1,6 +1,5 @@
 import Express from "express";
 import shopRouter from "./routes/shopRouter.js";
-import bagRouter from "./routes/bagRouter.js";
 import addProductRouter from "./routes/addproductRouter.js";
 import productsRouter from "./routes/productsRouter.js"
 //Créer une application Express
@@ -20,11 +19,10 @@ app.get("/", (req, res) => {
   res.render("shop", {});
 });
 
-app.use("/shop", shopRouter);
+
+app.use(shopRouter)
 
 app.use("/addproduct", addProductRouter);
-
-app.use("/shop/bag", bagRouter);
 
 app.use("/products", productsRouter);
 
