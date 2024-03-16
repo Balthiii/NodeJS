@@ -1,7 +1,6 @@
 
 
 import Product from "../models/productModel.js";
-// import Products from "../data/data.js";
 
 //Récupération de la liste de tous les produits
 const getProducts = (req, res, next) => {
@@ -34,7 +33,48 @@ const getProduct = (req,res,next) => {
         if (err) console.log(err);
       });
 };
+const postAddProduct = (req, res, next) => {
+    console.log(req.body)
+    const product = new Product(
+        null,
+        req.body.title,
+        req.body.imageUrl,
+        req.body.description,
+        req.body.price
+    );
+    product 
+        .save()
+        .then(() => {
+            res.redirect('/shop');
+        })
+        .catch(err => {
+            console.error(err);
+        });
 
+};
+
+
+const getAddProduct = (req, res, next) => {
+    res.render('addproduct', {
+        pageTitle : 'Ajouter un Produit',
+        path : '/addproduct',
+        editing : false
+    })
+};
+
+const shopController = {
+    getProducts,
+    getProduct,
+    getAddProduct,
+    postAddProduct
+    //getIndex
+}
+export default shopController ;
+
+
+/* La class Products est utilisé si l'on souhaite faire un CRUD sur un fichier js. Dans notre cas on utilise une BDD.
+
+Products from "../data/data.js";
 // const getIndex = (req, res, next) => {
 //     res.render("shop", {
 //     pageTitle: "Ajouter un Produit",
@@ -43,37 +83,4 @@ const getProduct = (req,res,next) => {
 //   });
 // }
 
-
-// const postAddProduct = (req, res, next) => {
-//     const product = new Product(
-//         null,
-//         req.body.title,
-//         req.body.imageUrl,
-//         req.body.description,
-//         req.body.price
-//     );
-
-// product.save()
-//         .then(() => {
-//             res.redirect('/');
-//         })
-//         .catch(err => {
-//             console.error(err);
-//             res.status(500).send("Une erreur s'est produite lors de l'ajout du produit.");
-//         });
-
-// };
-
-
-const shopController = {
-    getProducts,
-    getProduct   
-    //getIndex
-}
-export default shopController ;
-
-
-
-
-
-
+*/

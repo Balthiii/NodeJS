@@ -7,8 +7,8 @@
       <% for(let product of products) { %>
       <div class="product">
         <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
-        <h3><%= product.name %></h3>
-        <p><%= product.price %></p>
+        <h3><%=product.title %></h3>
+        <p>$<%= product.price %></p>
         <a class="btn" href="/products/<%= product.id %>">Détail</a>
       </div>
       <% } %>
