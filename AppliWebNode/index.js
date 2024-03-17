@@ -16,15 +16,18 @@ app.set("views", "views");
 
 
 app.get("/", (req, res) => {
-  res.render("shop", {});
+  res.render("listproducts", {});
 });
 
-app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//Utilisation du routeur ShopRouter pour gérer les routes.
 app.use(shopRouter);
 
+//Ecoute du serveur sur le port 4000
 app.listen(4000, () => {
-  console.log("Server is running on port 4000");
+  console.log("Le serveur s'éxécute sur le port 4000. Pour accéder à la page d'accueil : http://localhost:4000/listproducts :)");
 });
 
