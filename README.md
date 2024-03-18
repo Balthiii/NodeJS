@@ -14,15 +14,14 @@ Cloner le repository :
 
 Se déplacer dans le repertoire du projet :
 
-```cd NodeJS```
+```cd NodeJS/AppliWebNode```
 
 Installer les dépendances : 
 
 ```npm install```
 
-Importer la base de données :  
+Importer la base de données ses situant dans : NodeJS/AppliWebNode/dumps/node.sql
 
-```mysql -u root -p node /dump/nodes.sql```
 ## Lancement de l'application
 
 Démarrer le serveur:  
@@ -30,7 +29,6 @@ Démarrer le serveur:
 ```npm start```
 
 Accéder à l'application dans votre navigateur web à l'adresse :  http://localhost:4000/listproducts
-
 
 ## Fonctionnalités 
 
