@@ -41,7 +41,7 @@ const getProduct = (req, res, next) => {
     Product.fetch(productId)
         .then(([rows]) => {
             const product = rows[0]
-            res.render("product-details", {
+            res.render("productdetails", {
                 pageTitle: product.title,
                 path: "/products",
                 product: product

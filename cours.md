@@ -123,4 +123,43 @@ Une route est l'association d'une méthode HTTP et une URL.
 
 Qu'est ce qu'une requête middleware pour Express ?
 
+
+Pourquoi une api(rest) ?
+
+Tous les front end ne requierent pas nécessairement des pages html.
+
+Il existe 3 appli web différentes : 
+
+- Les applications mobiles 
+- Les SPA : Single Page Application
+
+MERN Stack : Mongo Express React Node
+
+
+Création d'un projet Node : 
+
+```
+npm init -y
+```
+
+Installation de la librairie `express`*
+
+```
+npm install express
+```
+
+Création d'un fichier `index.js` dans un dossier src : 
+
+```
+mkdir src
+touch src/index.js
+```
+
+Modification du package.json pour ajouter un script de démarrage
+
+```
+scripts": {
+    "start": "node src/index.js"
+  },
+```
  
