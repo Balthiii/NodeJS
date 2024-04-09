@@ -1,8 +1,10 @@
 import "dotenv/config";
 import express from "express";
 import pokemonRoutes from "./routes/pokemon.js";
+import authRoutes from "./routes/auth.js";
 import mongoose from "mongoose"
 import { handleUncaughtErrors } from "./Middlewares/error.js";
+import isAuth from "./Middlewares/auth.js";
 
 const app = express();
 
@@ -13,7 +15,8 @@ const MONGO_STRING = process.env.MONGO_STRING;
 // Middleware qui permet de parser les donnees issues d'un formulaire
 app.use(express.json());
 
-app.use("/pokemon", pokemonRoutes);
+app.use("/pokemon", isAuth, pokemonRoutes);
+app.use("/auth", authRoutes);
 
 app.use("/error", (req, res) => {
   try {

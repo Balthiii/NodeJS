@@ -37,3 +37,23 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:3000/pokemon/661518e31d3445c86edfc6ba
+
+###
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin",
+    "password": "admin"
+}
+
+###
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "admin",
+    "password": "admin",
+    "name": "admin",
+    "phoneNumber": "123456789"
+}
