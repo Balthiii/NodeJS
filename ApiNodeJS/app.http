@@ -1,34 +1,32 @@
-GET http://localhost:3001
 
-###
 
-GET http://localhost:3001/cars
+GET http://localhost:3000/pokemon
 
 
 ###
 
-GET http://localhost:3001/cars/4
+GET http://localhost:3000/pokemon/66150701143cfa55d369fb56
 
 ### 
 
-POST http://localhost:3001/cars
+POST http://localhost:3000/pokemon
 Content-Type: application/json
 
 {
-    "brand": "Ferrari",
-    "model": "F8 Tributo"
+    "Name": "Deoxys",
+    "Type": "Psy"
 }
 
 ### 
 
-PUT http://localhost:3001/cars/4
+PUT http://localhost:3000/pokemon/6615073a143cfa55d369fb5a
 Content-Type: application/json
 
 {
-    "brand": "Mercedes-Benz",
-    "model": "AMG GT 63 S"
+    "Name": "Regigigas",
+    "Type": "Normal"
 }
 
 ###
 
-DELETE http://localhost:3001/cars/3
+DELETE http://localhost:3000/pokemon/6615073a143cfa55d369fb5a
