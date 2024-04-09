@@ -5,6 +5,10 @@ GET http://localhost:3000/pokemon
 
 ###
 
+GET http://localhost:3000/error
+
+###
+
 GET http://localhost:3000/pokemon/66150701143cfa55d369fb56
 
 ### 
@@ -13,20 +17,23 @@ POST http://localhost:3000/pokemon
 Content-Type: application/json
 
 {
-    "Name": "Deoxys",
-    "Type": "Psy"
+    "Name": "Carapuce",
+    "Type": "Eau",
+    "Weight":"52"
+    
 }
 
 ### 
 
-PUT http://localhost:3000/pokemon/6615073a143cfa55d369fb5a
+PUT http://localhost:3000/pokemon661518fc1d3445c86edfc6bc
 Content-Type: application/json
 
 {
     "Name": "Regigigas",
-    "Type": "Normal"
+    "Type": "Normal",
+    "Weight":11
 }
 
 ###
 
-DELETE http://localhost:3000/pokemon/6615073a143cfa55d369fb5a
+DELETE http://localhost:3000/pokemon/661518e31d3445c86edfc6ba

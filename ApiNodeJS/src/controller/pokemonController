@@ -1,5 +1,5 @@
 import Pokemon from "../models/pokemon.js"; // Import the pokemon model
-import { body } from "express-validator/check";
+import { validationResult } from "express-validator";
 
 export const getPokemons = (req, res) => {
   Pokemon.find()
@@ -25,9 +25,15 @@ export const getPokemon= (request, response) => {
     });
 };
 
+export const getError = (req, res) => {
+  throw new Error("This is an error");
+};
+
+
 export const createPokemon = (request, response) => {
   const bodyContent = request.body;
-
+  const errors = validationResult(request);
+  console.log(errors);
   // on cree un nouvelle instance de pokemon
   const newPokemon = new Pokemon(bodyContent);
 

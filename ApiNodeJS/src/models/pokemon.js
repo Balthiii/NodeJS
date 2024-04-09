@@ -4,6 +4,7 @@ const { Schema, model } = mongoose;
 const pokemonSchema = new Schema({
   Name: String,
   Type: String,
+  Weight: Number,
   //   year: {
   //     type: Number,
   //     min: 1900,

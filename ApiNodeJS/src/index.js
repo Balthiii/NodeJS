@@ -2,10 +2,10 @@ import "dotenv/config";
 import express from "express";
 import pokemonRoutes from "./routes/pokemon.js";
 import mongoose from "mongoose"
+import { handleUncaughtErrors } from "./Middlewares/error.js";
 
 const app = express();
 
-console.log("env:", process.env.MONGO_STRING)
 const PORT = process.env.PORT || 3001;
 const MONGO_STRING = process.env.MONGO_STRING;
 
@@ -14,6 +14,16 @@ const MONGO_STRING = process.env.MONGO_STRING;
 app.use(express.json());
 
 app.use("/pokemon", pokemonRoutes);
+
+app.use("/error", (req, res) => {
+  try {
+    //
+    throw new Error("This is an error");
+  } catch (error) {}
+});
+
+// Middleware pour gerer les erreurs
+app.use(handleUncaughtErrors);
 
 /* 
  Routes definit une route Get sur / qui renvoie un message
@@ -27,6 +37,7 @@ app.get("/", (request, response) => {
   // JSON : Javascript Object Notation
 });
 
+//Middleware 
 
 
 mongoose.connect(MONGO_STRING).then(() => {
@@ -36,3 +47,4 @@ mongoose.connect(MONGO_STRING).then(() => {
     console.log(`Server is running on port ${PORT}`);
   });
 });
+
