@@ -5,12 +5,11 @@ import {
   getPokemon,
   getPokemons,
   udpatePokemon,
-  getError,
-} from "../controller/pokemonController";
+} from "../controller/pokemonController.js";
 
-const router = express.Router();
 import { body } from "express-validator";
 
+const router = express.Router();
 // GET http://localhost:3001/pokemon
 router.get("/", getPokemons);
 
@@ -34,9 +33,6 @@ router.put("/:id", udpatePokemon);
 // DELETE http://localhost:3001/pokemon/1 creer une route qui
 // permet de supprimer une voiture
 router.delete("/:id", deletePokemon);
-
-// ERROR
-router.get("/error", getError);
 
 // Ceci est un export default, on peut en avoir
 // qu'un seul par fichier (module)

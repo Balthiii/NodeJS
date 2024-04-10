@@ -17,26 +17,27 @@ POST http://localhost:3000/pokemon
 Content-Type: application/json
 
 {
-    "Name": "Carapuce",
+   "Name": "Carapuce",
     "Type": "Eau",
-    "Weight":"52"
-    
+    "Weight":9,
+    "Description" :"Ce Pokémon crache une écume redoutable. Après sa naissance, son dos gonfle et durcit pour former une carapace."
 }
 
 ### 
 
-PUT http://localhost:3000/pokemon661518fc1d3445c86edfc6bc
+PUT http://localhost:3000/pokemon/61518fc1d3445c86edfc6bc
 Content-Type: application/json
 
 {
     "Name": "Regigigas",
     "Type": "Normal",
-    "Weight":11
+    "Weight":11,
+    "Description":
 }
 
 ###
 
-DELETE http://localhost:3000/pokemon/661518e31d3445c86edfc6ba
+DELETE http://localhost:3000/pokemon/66150701143cfa55d369fb56
 
 ###
 POST http://localhost:3000/auth/signin

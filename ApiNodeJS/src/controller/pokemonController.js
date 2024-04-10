@@ -22,22 +22,20 @@ export const getPokemon= (request, response) => {
     .catch((error) => {
       console.log(error)
       throw new Error(error);
+      // res.status(400).json({ message: error.message });
     });
-};
-
-export const getError = (req, res) => {
-  throw new Error("This is an error");
 };
 
 
 export const createPokemon = (request, response) => {
   const bodyContent = request.body;
-  const errors = validationResult(request);
+  const errors = validationResult(request).array();
   console.log(errors);
   // on cree un nouvelle instance de pokemon
   const newPokemon = new Pokemon(bodyContent);
 
   // on sauvegarde la nouvelle instance de pokemon
+  // if(errors.lengt === 0) {
   newPokemon
     .save()
     .then((result) => {
@@ -46,9 +44,10 @@ export const createPokemon = (request, response) => {
     .catch((error) => {
       console.log(error);
       throw new Error(error);
-      // response.status(400).json({ message: error.message });
     });
-
+//   } else {
+//     response.status(400).json({ message: "Erreur trouvé" });
+//   }
 };
 
 
@@ -62,8 +61,8 @@ export const udpatePokemon = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    throw new Error(error);
-    // res.status(400).json({ message: error.message });
+    throw new Error(error)
+        // res.status(400).json({ message: error.message });
   });
 };
 
@@ -75,7 +74,7 @@ export const deletePokemon = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    throw new Error(error);
+    throw new Error(error)
     // res.status(400).json({ message: error.message });
   });
 };
