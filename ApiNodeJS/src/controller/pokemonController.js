@@ -8,8 +8,7 @@ export const getPokemons = (req, res) => {
     })
     .catch((error) => {
       console.log(error);
-      throw new Error(error);
-      // res.status(400).json({ message: error.message });
+      res.status(500).json({ message:"La récupération des Pokémons a échoué."  });
     });
 };
 
@@ -21,35 +20,25 @@ export const getPokemon= (request, response) => {
     })
     .catch((error) => {
       console.log(error)
-      throw new Error(error);
-      // res.status(400).json({ message: error.message });
+      response.status(500).json({ message: "La récupération du Pokémon a échoué." });
     });
 };
 
 
 export const createPokemon = (request, response) => {
   const bodyContent = request.body;
-  const errors = validationResult(request).array();
-  console.log(errors);
-  // on cree un nouvelle instance de pokemon
   const newPokemon = new Pokemon(bodyContent);
 
-  // on sauvegarde la nouvelle instance de pokemon
-  // if(errors.lengt === 0) {
   newPokemon
     .save()
     .then((result) => {
-      response.status(201).json(result);
+      response.status(201).json({ message: 'Pokémon créé avec succès', data: result });
     })
     .catch((error) => {
       console.log(error);
-      throw new Error(error);
+      response.status(500).json({ message: "La création du Pokémon a échoué."});
     });
-//   } else {
-//     response.status(400).json({ message: "Erreur trouvé" });
-//   }
 };
-
 
 export const udpatePokemon = (request, response) => {
   const id = request.params.id;
@@ -61,8 +50,7 @@ export const udpatePokemon = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    throw new Error(error)
-        // res.status(400).json({ message: error.message });
+    res.status(500).json({ message: "La mise à jour du Pokémon a échoué."  });
   });
 };
 
@@ -74,7 +62,7 @@ export const deletePokemon = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    throw new Error(error)
-    // res.status(400).json({ message: error.message });
+
+    res.status(500).json({ message: "La suppression du Pokémon a échoué." });
   });
 };

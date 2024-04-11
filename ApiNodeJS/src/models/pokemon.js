@@ -5,6 +5,8 @@ const pokemonSchema = new Schema({
   Name: String,
   Type: String,
   Weight: Number,
+  Talent: String,
+  Size: String,
   Description : String
 
 });
