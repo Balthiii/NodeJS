@@ -14,6 +14,7 @@ const validateSignup = (req, res, next) => {
 
 }
 
+
 router.post("/signin", signin);
 
 router.post('/signup', [

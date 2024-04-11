@@ -8,6 +8,8 @@ import multer from "multer";
 import path from "path";
 import * as url from "url";
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+import swaggerJsDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 const fileStorage = multer.diskStorage({
     destination: (req, file, cd) => {
@@ -32,6 +34,21 @@ const fileStorage = multer.diskStorage({
 
 export function CreateApp() {
   const app = express();
+
+  const swaggerOptions = {
+    definition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'API de mon application',
+        version: '1.0.0',
+        description: "C'est une API qui permet aux utilisateurs de créer, lire, mettre à jour et supprimer des informations sur les Pokémon. Les utilisateurs peuvent rechercher des Pokémon par nom, type et autres attributs.",
+      },
+    },
+    apis: ['./routes/*.js'],
+  };
+  
+  const swaggerDocs = swaggerJsDoc(swaggerOptions);
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
   app.use(express.json());
 
