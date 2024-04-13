@@ -1,0 +1,63 @@
+
+GET http://localhost:3000/pokemon
+
+
+###
+
+GET http://localhost:3000/error
+
+###
+
+GET http://localhost:3000/pokemon/66150701143cfa55d369fb56
+
+### 
+
+POST http://localhost:3000/pokemon
+Content-Type: application/json
+
+{
+   "Name": "Grodrive",
+    "Type": "Spectre",
+    "Size": "1.2m",
+    "Talent": "Boom Final",
+    "Weight": 15,
+    "Description" :"Il contrôle son altitude en produisant des gaz à l’intérieur de son corps puis en les expulsant."
+}
+
+### 
+
+PUT http://localhost:3000/pokemon/61518fc1d3445c86edfc6bc
+Content-Type: application/json
+
+{
+   "Name": "Keunotor",
+    "Type": "Normal",
+    "Size": "0.6m",
+    "Talent": "Fouille",
+    "Weight": 20,
+    "Description" :"Il est capable de sentir les choses qui se trouvent sous terre sans les voir."
+}
+
+###
+
+DELETE http://localhost:3000/pokemon/66150701143cfa55d369fb56
+
+###
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "KfdpPf8*"
+}
+
+###
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+    {
+    "email": "admin@gmail.com",
+    "password": "KfdpPf8*",
+    "name": "admin",
+    "phoneNumber": "123456789"
+    }
