@@ -18,13 +18,71 @@ next();
 };
 
 const router = express.Router();
-// GET http://localhost:3001/pokemon
+
+/**
+ * @swagger
+ * /pokemon:
+ *   get:
+ *     summary: Récupère la liste des pokémons
+ */
+// GET http://localhost:3000/pokemon
 router.get("/", getPokemons);
 
-// GET http://localhost:3001/pokemon/1
+
+/**
+ * @swagger
+ * /pokemon/{id}:
+ *   get:
+ *     summary: Récupère un Pokémon spécifique par son ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: L'ID du Pokémon
+ *         schema:
+ *           type: string
+ */
 router.get("/:id", getPokemon);
 
-// POST http://localhost:3001/pokemon
+
+
+/**
+ * @swagger
+ * /pokemon:
+ *   post:
+ *     summary: Crée un nouveau Pokémon.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - Name
+ *               - Type
+ *               - Size
+ *               - Talent
+ *               - Weight
+ *               - Description
+ *             properties:
+ *               Name:
+ *                 type: string
+ *                 description: Le nom du Pokémon, doit contenir au moins 3 caractères.
+ *               Type:
+ *                 type: string
+ *                 description: Le type du Pokémon, doit être l'un des types prédéfinis.
+ *               Size:
+ *                 type: string
+ *                 description: La taille du Pokémon.        
+ *               Talent:           
+ *                 type: string      
+ *                 description: Le talent du Pokémon.      
+ *               Weight:         
+ *                 type: number      
+ *                 description: Le poids du Pokémon.   
+ */
+
+// POST http://localhost:3000/pokemon
 router.post(
   "/",
   [
@@ -35,14 +93,58 @@ router.post(
   validateType, createPokemon
 );
 
-// PUT http://localhost:3001/pokemon/1 creer une route qui
-// permet de modiier une voiture
+/**
+ * @swagger
+ * /pokemon/{id}:
+ *   put:
+ *     summary: Met à jour un Pokémon existant.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: L'ID du Pokémon à mettre à jour.
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               Name:
+ *                 type: string
+ *                 description: Le nom du Pokémon.
+ *               Type:
+ *                 type: string
+ *                 description: Le type du Pokémon.
+ *               Size:
+ *                 type: string
+ *                 description: La taille du Pokémon.
+ *               Talent:
+ *                 type: string
+ *                 description: Le talent du Pokémon.
+ *               Weight:
+ *                 type: number
+ *                 description: Le poids du Pokémon.
+ */
+// PUT http://localhost:3001/pokemon/1 creer une route qui permet de mettre à jour un pokemon
 router.put("/:id", udpatePokemon);
 
-// DELETE http://localhost:3001/pokemon/1 creer une route qui
-// permet de supprimer une voiture
+/**
+ * @swagger
+ * /pokemon/{id}:
+ *   delete:
+ *     summary: Supprime un Pokémon existant.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: L'ID du Pokémon à supprimer.
+ *         schema:
+ *           type: string
+ */
 router.delete("/:id", deletePokemon);
-
 // Ceci est un export default, on peut en avoir
 // qu'un seul par fichier (module)
 export default router;

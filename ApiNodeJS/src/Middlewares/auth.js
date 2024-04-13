@@ -36,5 +36,4 @@ export default function auth(req, res, next) {
   } catch (error) {
     return res.status(401).json({ message: "Le token est invalide" });
   }
-  next();
 }

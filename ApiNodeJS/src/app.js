@@ -44,7 +44,7 @@ export function CreateApp() {
         description: "C'est une API qui permet aux utilisateurs de créer, lire, mettre à jour et supprimer des informations sur les Pokémon. Les utilisateurs peuvent rechercher des Pokémon par nom, type et autres attributs.",
       },
     },
-    apis: ['./routes/*.js'],
+    apis: ['./src/routes/*.js'],
   };
   
   const swaggerDocs = swaggerJsDoc(swaggerOptions);
