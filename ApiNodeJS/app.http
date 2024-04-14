@@ -47,7 +47,7 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "admin@gmail.com",
+    "email": "admintest@gmail.com",
     "password": "KfdpPf8*"
 }
 
@@ -56,7 +56,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
     {
-    "email": "admin@gmail.com",
+    "email": "admintest@gmail.com",
     "password": "KfdpPf8*",
     "name": "admin",
     "phoneNumber": "123456789"

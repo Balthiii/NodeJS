@@ -1,5 +1,4 @@
 import Pokemon from "../models/pokemon.js"; // Import the pokemon model
-import { validationResult } from "express-validator";
 
 export const getPokemons = (req, res) => {
   Pokemon.find()
@@ -20,7 +19,7 @@ export const getPokemon= (request, response) => {
     })
     .catch((error) => {
       console.log(error)
-      response.status(500).json({ message: "La récupération du Pokémon a échoué." });
+      response.status(404).json({ message: "La récupération du Pokémon a échoué." });
     });
 };
 
@@ -36,7 +35,7 @@ export const createPokemon = (request, response) => {
     })
     .catch((error) => {
       console.log(error);
-      response.status(500).json({ message: "La création du Pokémon a échoué."});
+      response.status(404).json({ message: "La création du Pokémon a échoué."});
     });
 };
 
@@ -50,7 +49,7 @@ export const udpatePokemon = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    res.status(500).json({ message: "La mise à jour du Pokémon a échoué."  });
+    res.status(404).json({ message: "La mise à jour du Pokémon a échoué."  });
   });
 };
 
@@ -63,6 +62,6 @@ export const deletePokemon = (request, response) => {
   .catch((error) => {
     console.log(error);
 
-    res.status(500).json({ message: "La suppression du Pokémon a échoué." });
+    res.status(404).json({ message: "La suppression du Pokémon a échoué." });
   });
 };

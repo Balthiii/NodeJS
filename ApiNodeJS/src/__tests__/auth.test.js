@@ -18,8 +18,8 @@ describe("creation d'un utilisateur et login", () => {
 
   it("Should create a new user", async () => {
     const response = await request(app).post("/auth/signup").send({
-      email: "test@gmail.com",
-      password: "tesqsfjOUT*t9",
+      email: "bvaillant@gmail.com",
+      password: "gkfkdf9*DF",
       name: "test",
       phoneNumber: "123456789",
     });
@@ -28,8 +28,8 @@ describe("creation d'un utilisateur et login", () => {
 
   it("Should login a user", async () => {
     const response = await request(app).post("/auth/signin").send({
-      email: "test@gmail.com",
-      password: "tesqsfjOUT*t9",
+      email: "bvaillant@gmail.com",
+      password: "gkfkdf9*DF",
     });
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveProperty("token");
@@ -37,8 +37,8 @@ describe("creation d'un utilisateur et login", () => {
 
   it("Should not login a non-existing user", async () => {
     const response = await request(app).post("/auth/signin").send({
-      email: "testdfsg@gmail.com",
-      password: "tesqsfjOUT*t9",
+      email: "bvaillant@gmail.com",
+      password: "gkfkdf9*DF",
     });
     expect(response.statusCode).toBe(401);
   });

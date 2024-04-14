@@ -7,13 +7,13 @@ import authRoutes from "./routes/auth.js";
 import multer from "multer";
 import path from "path";
 import * as url from "url";
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+//const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
 const fileStorage = multer.diskStorage({
     destination: (req, file, cd) => {
-      cd(null, "images");
+      cd(null, "uploads/");
     },
     filename: (req, file, cd) => {
       cd(null, new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname);
@@ -41,9 +41,23 @@ export function CreateApp() {
       info: {
         title: 'API de mon application',
         version: '1.0.0',
-        description: "C'est une API qui permet aux utilisateurs de créer, lire, mettre à jour et supprimer des informations sur les Pokémon. Les utilisateurs peuvent rechercher des Pokémon par nom, type et autres attributs.",
+        description: "Cette API permet aux utilisateurs de gérer une collection de Pokémons.Elle offre des fonctionnalités d'authentification, permettant aux utilisateurs de s'inscrire et de se connecter, ainsi que des fonctionnalités pour créer, récupérer, mettre à jour et supprimer des Pokémons.",
       },
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
     apis: ['./src/routes/*.js'],
   };
   
@@ -57,7 +71,7 @@ export function CreateApp() {
         multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
       );
       // console.log("path: ", path.join(__dirname, "images"));
-      app.use("/images", express.static(path.join(__dirname, "images")));
+      app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
   app.use(routes);
