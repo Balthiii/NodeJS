@@ -7,7 +7,7 @@ import authRoutes from "./routes/auth.js";
 import multer from "multer";
 import path from "path";
 import * as url from "url";
-//const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+// const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 

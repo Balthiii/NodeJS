@@ -18,10 +18,10 @@ describe("creation d'un utilisateur et login", () => {
 
   it("Should create a new user", async () => {
     const response = await request(app).post("/auth/signup").send({
-      email: "bvaillant@gmail.com",
-      password: "gkfkdf9*DF",
+      email: "test@gmail.com",
+      password: "dfsf9dfP*df",
       name: "test",
-      phoneNumber: "123456789",
+      phoneNumber: "051993425",
     });
     expect(response.statusCode).toBe(201);
   });
@@ -29,7 +29,7 @@ describe("creation d'un utilisateur et login", () => {
   it("Should login a user", async () => {
     const response = await request(app).post("/auth/signin").send({
       email: "bvaillant@gmail.com",
-      password: "gkfkdf9*DF",
+      password: "dfsqj9*Kre",
     });
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveProperty("token");

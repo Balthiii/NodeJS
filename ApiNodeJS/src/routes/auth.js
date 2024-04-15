@@ -40,7 +40,6 @@ const validateSignup = (req, res, next) => {
  *       401:
  *         description: Email ou mot de passe incorrect.
  */
-router.post("/signin", signin);
 
 router.post("/signin", signin);
 
