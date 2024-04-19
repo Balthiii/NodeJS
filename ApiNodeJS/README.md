@@ -7,7 +7,7 @@ Grâce à cette API il serait possible par exemple de développer le début d'un
 
 1. Clonez ce dépôt sur votre machine locale.
 2. Naviguez jusqu'au répertoire du projet dans votre terminal : ./NodeJS/ApiNodeJS
-3. Renommez le fichier `.env.example` en `.env` et mettez à jour les variables d'environnement selon votre configuration.V ous devrez fournir votre propre chaîne de connexion MongoDB pour `MONGO_STRING`.
+3. Renommez le fichier `.env.example` en `.env` et mettez à jour les variables d'environnement selon votre configuration.Vous devrez fournir votre propre chaîne de connexion MongoDB pour `MONGO_STRING`.
 4. Exécutez `npm install`.
 
 ## Utilisation
@@ -42,8 +42,6 @@ Pour démarrer le serveur, exécutez `npm run dev` dans le répertoire du projet
 Une documentation Swagger de l'API est disponible. Vous pouvez y accéder en naviguant vers `http://localhost:3000/api-docs/` après avoir démarré le serveur. Cette documentation fournit des informations détaillées sur les différentes routes de l'API. De plus, vous pouvez lancer directement les requêtes à partir de cette interface afin de tester l'API (Sauf pour l'upload d'image qui sera à faire sur POSTMAN pa exemple).
 
 ## Lancement des test
-
-
 
 Ce projet utilise Jest et Supertest pour les tests. Pour lancer les tests, exécutez la commande suivante dans votre terminal :
 
